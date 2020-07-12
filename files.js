@@ -20,9 +20,30 @@ const fs = require('fs');
 
 
 // make folders
-fs.mkdir('./routes',(err)=>{
-    if(err){
-        console.log(err)
-    }
-    console.log("folder has created")
-})
+// if(!fs.existsSync("./routes")){
+//     fs.mkdir('./routes',(err)=>{
+//         if(err){
+//             console.log(err)
+//         }
+//         console.log("folder has created")
+//     })
+// }
+// else{
+//     fs.rmdir("./routes",(err)=>{
+//         if(err){
+//             console.log(err)
+//         }
+//         console.log("folder has deleted")
+//     })
+// }
+
+//delete files
+
+if(fs.existsSync("./file.txt")){
+    fs.unlink("./file.txt",(err)=>{
+        if(err){
+            console.log(err)
+        }
+        console.log("file has deleted")
+    })
+}
